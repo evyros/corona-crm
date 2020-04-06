@@ -30,6 +30,10 @@ function createCustomer(customer) {
 	});
 }
 
+function openEditCustomerModal() {
+
+}
+
 function getCustomers() {
 	return fetch(API_URL + '/customer');
 }
@@ -59,5 +63,9 @@ function buildCustomerRow(customer) {
             <button class="btn btn-sm btn-edit"><i class="far fa-edit"></i></button>
             <button class="btn btn-sm btn-delete"><i class="far fa-trash-alt"></i></button>
         </td>`;
+	row.querySelector('.btn-edit').addEventListener('click', () => {
+		console.log(customer);
+		openModal();
+	});
 	return row;
 }
